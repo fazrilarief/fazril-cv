@@ -20,22 +20,31 @@ window.onbeforeunload = () => {
 };
 
 function showPopup(imageSrc) {
-  var popup = document.getElementById('imagePopup');
-  var popupImage = document.getElementById('popupImage');
+  var popup = document.getElementById("imagePopup");
+  var popupImage = document.getElementById("popupImage");
 
   popupImage.src = imageSrc;
-  popup.style.display = 'flex';
+  popup.style.display = "flex";
 }
 
 function closePopup() {
-  var popup = document.getElementById('imagePopup');
-  popup.style.display = 'none';
+  var popup = document.getElementById("imagePopup");
+  popup.style.display = "none";
 }
 
 function showCarousel(imageSrc) {
-  var carouselImage = document.getElementById('carouselImage');
+  var carouselImage = document.getElementById("carouselImage");
   carouselImage.src = imageSrc;
 
-  $('#imageCarousel').modal('show');
+  $("#imageCarousel").modal("show");
 }
 
+const navBlurred = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 0) {
+    navbar.classList.add("blurred");
+  } else {
+    navbar.classList.remove("blurred");
+  }
+});
